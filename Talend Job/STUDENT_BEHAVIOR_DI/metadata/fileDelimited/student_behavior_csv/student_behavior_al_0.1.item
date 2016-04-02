@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_BUdY0Pd-EeWxCoLU1oH-QA" name="student_behavior_al" dataPackage="_BUdY0fd-EeWxCoLU1oH-QA" Server="Localhost 127.0.0.1" FilePath="C:/Users/vinee_000/OneDrive/Vineet/Courses/Data Warehouse &amp; Business Intelligence/Project/DI Project/Materials/Data Sources/Student_Behavior_AL.csv" Format="WINDOWS" Encoding="ISO-8859-15" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" EscapeType="CSV" EscapeChar="&quot;\&quot;&quot;" TextEnclosure="&quot;\&quot;&quot;" CsvOption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_BUdY0fd-EeWxCoLU1oH-QA" name="default" dataManager="_BUdY0Pd-EeWxCoLU1oH-QA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_BUdY0vd-EeWxCoLU1oH-QA" id="_tVVX8Pd9EeWxCoLU1oH-QA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY0_d-EeWxCoLU1oH-QA" label="Event_Number" length="6" talendType="id_Integer" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY1Pd-EeWxCoLU1oH-QA" label="Behavior_Date" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY1fd-EeWxCoLU1oH-QA" label="PermNum" length="6" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY1vd-EeWxCoLU1oH-QA" label="School_Number" length="3" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY1_d-EeWxCoLU1oH-QA" label="Behavior_Event_Code" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY2Pd-EeWxCoLU1oH-QA" label="Behavior_Location_Code" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY2fd-EeWxCoLU1oH-QA" label="Grade_Name" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY2vd-EeWxCoLU1oH-QA" label="Behavior_Role_ID" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY2_d-EeWxCoLU1oH-QA" label="Violence_Flag" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY3Pd-EeWxCoLU1oH-QA" label="Weapon_Id" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY3fd-EeWxCoLU1oH-QA" label="Current_Flag" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_BUdY3vd-EeWxCoLU1oH-QA" label="Employee_ID" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
