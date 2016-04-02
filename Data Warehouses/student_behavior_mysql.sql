@@ -352,6 +352,26 @@ CREATE TABLE `factstudentbehavior` (
 
 /*Data for the table `factstudentbehavior` */
 
+/*Table structure for table `rejectbehaviorresolution` */
+
+DROP TABLE IF EXISTS `rejectbehaviorresolution`;
+
+CREATE TABLE `rejectbehaviorresolution` (
+  `BehaviorResolutionKey` int(11) NOT NULL AUTO_INCREMENT,
+  `BehaviorResolutionAlternateKey` int(11) DEFAULT NULL,
+  `StudentBehaviorFK` int(11) DEFAULT NULL,
+  `ResolutionStartDateFK` int(11) DEFAULT NULL,
+  `ResolutionEndDateK` int(11) DEFAULT NULL,
+  `BehaviourResolutionTypeFK` int(11) DEFAULT NULL,
+  `ExpulsionServiceFlag` bit(1) DEFAULT NULL,
+  `ETLProcessId` varchar(20) DEFAULT NULL,
+  `CreationDate` datetime DEFAULT NULL,
+  `ModificationDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`BehaviorResolutionKey`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `rejectbehaviorresolution` */
+
 /*Table structure for table `rejectstudentabsence` */
 
 DROP TABLE IF EXISTS `rejectstudentabsence`;
@@ -402,26 +422,6 @@ CREATE TABLE `rejectstudentbehavior` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `rejectstudentbehavior` */
-
-/*Table structure for table `rejectstudentbehaviorresolution` */
-
-DROP TABLE IF EXISTS `rejectstudentbehaviorresolution`;
-
-CREATE TABLE `rejectstudentbehaviorresolution` (
-  `BehaviorResolutionKey` int(11) NOT NULL AUTO_INCREMENT,
-  `BehaviorResolutionAlternateKey` int(11) DEFAULT NULL,
-  `StudentBehaviorFK` int(11) DEFAULT NULL,
-  `ResolutionStartDateFK` int(11) DEFAULT NULL,
-  `ResolutionEndDateK` int(11) DEFAULT NULL,
-  `BehaviourResolutionTypeFK` int(11) DEFAULT NULL,
-  `ExpulsionServiceFlag` bit(1) DEFAULT NULL,
-  `ETLProcessId` varchar(20) DEFAULT NULL,
-  `CreationDate` datetime DEFAULT NULL,
-  `ModificationDate` datetime DEFAULT NULL,
-  PRIMARY KEY (`BehaviorResolutionKey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `rejectstudentbehaviorresolution` */
 
 /* Procedure structure for procedure `sp_truncateDim` */
 

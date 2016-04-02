@@ -372,7 +372,7 @@
       <elementValue elementRef="CONVERTDATE" value="false"/>
       <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
     </elementParameter>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
     <elementParameter field="CHECK" name="READ_REAL_VALUE" value="false" show="false"/>
     <elementParameter field="CHECK" name="STOPREAD_ON_EMPTYROW" value="false"/>
@@ -553,7 +553,7 @@
       <column comment="" key="false" length="10" name="DayId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="1" name="DayName" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="DayName" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="3" name="DOW" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -653,14 +653,14 @@
         <mapperTableEntries name="DateSerial" expression="DimDate.DateSerial" type="id_Integer"/>
         <mapperTableEntries name="YearId" expression="DimDate.Year_ID " type="id_Integer"/>
         <mapperTableEntries name="YearName" expression="DimDate.Year_Name " type="id_String"/>
-        <mapperTableEntries name="YearStart" expression="DimDate.Year_Start " type="id_Date"/>
+        <mapperTableEntries name="YearStart" expression="DimDate.Year_Start" type="id_Date"/>
         <mapperTableEntries name="YearEnd" expression="DimDate.Year_End " type="id_Date"/>
         <mapperTableEntries name="HalfId" expression="DimDate.Half_ID " type="id_Integer"/>
         <mapperTableEntries name="HalfName" expression="DimDate.Half_Name " type="id_String"/>
         <mapperTableEntries name="QtrId" expression="DimDate.Qtr_ID " type="id_Integer"/>
         <mapperTableEntries name="QtrName" expression="DimDate.Qtr_Name " type="id_String"/>
         <mapperTableEntries name="QuaterStart" expression="DimDate.Quarter_Start " type="id_Date"/>
-        <mapperTableEntries name="QuaterEnd" expression="DimDate.Quarter_End " type="id_Date"/>
+        <mapperTableEntries name="QuaterEnd" expression="DimDate.Quarter_End" type="id_Date"/>
         <mapperTableEntries name="MonthId" expression="DimDate.Month_ID " type="id_Integer"/>
         <mapperTableEntries name="MonthName" expression="DimDate.Month_Name " type="id_String"/>
         <mapperTableEntries name="MonthStart" expression="DimDate.Month_Start " type="id_Integer"/>
@@ -677,8 +677,8 @@
         <mapperTableEntries name="WeekStart" expression="DimDate.Week_Start " type="id_Integer"/>
         <mapperTableEntries name="WeekEnd" expression="DimDate.Week_End " type="id_Integer"/>
         <mapperTableEntries name="FiscalYear" expression="DimDate.Fiscal_Year " type="id_String"/>
-        <mapperTableEntries name="FiscalYearStart" expression="DimDate.Fiscal_Year_Start " type="id_Date"/>
-        <mapperTableEntries name="FiscalYearEnd" expression="DimDate.Fiscal_Year_End  " type="id_Date"/>
+        <mapperTableEntries name="FiscalYearStart" expression="DimDate.Fiscal_Year_Start" type="id_Date"/>
+        <mapperTableEntries name="FiscalYearEnd" expression="DimDate.Fiscal_Year_End" type="id_Date"/>
         <mapperTableEntries name="FiscalHalf" expression="DimDate.Fiscal_Half " type="id_String"/>
         <mapperTableEntries name="FiscalQtr" expression="DimDate.Fiscal_Qtr " type="id_String"/>
         <mapperTableEntries name="FiscalMonth" expression="DimDate.Fiscal_Month " type="id_String"/>
@@ -1095,7 +1095,7 @@
       <column comment="" key="false" length="10" name="DayId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="1" name="DayName" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="DayName" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="3" name="DOW" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1244,7 +1244,7 @@
       <column comment="" key="false" length="10" name="DayId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="1" name="DayName" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="DayName" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="3" name="DOW" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
