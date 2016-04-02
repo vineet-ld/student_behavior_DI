@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_t4pmAfbxEeWpQef-3mFqFw" name="DimGradeLevel" dataPackage="_t4pmAvbxEeWpQef-3mFqFw" Server="Localhost 127.0.0.1" FilePath="C:/Users/vinee_000/OneDrive/Vineet/Courses/Data Warehouse &amp; Business Intelligence/Project/DI Project/Materials/Data Sources/Grade_Level.txt" Format="WINDOWS" Encoding="ISO-8859-15" FieldSeparatorValue="&quot;\t&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" FieldSeparatorType="Tabulation"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_t4pmAvbxEeWpQef-3mFqFw" name="default" dataManager="_t4pmAfbxEeWpQef-3mFqFw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_t4pmA_bxEeWpQef-3mFqFw" id="_eCNRwPbxEeWpQef-3mFqFw" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_t4pmBPbxEeWpQef-3mFqFw" label="Grade_Id" length="4" talendType="id_Integer" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_t4pmBfbxEeWpQef-3mFqFw" label="Grade_Name" length="4" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

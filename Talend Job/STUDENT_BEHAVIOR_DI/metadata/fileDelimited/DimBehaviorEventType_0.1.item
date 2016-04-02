@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_y6nI8fd-EeWxCoLU1oH-QA" name="DimBehaviorEventType" dataPackage="_y6nI8vd-EeWxCoLU1oH-QA" Server="Localhost 127.0.0.1" FilePath="C:/Users/vinee_000/OneDrive/Vineet/Courses/Data Warehouse &amp; Business Intelligence/Project/DI Project/Materials/Data Sources/Behavior_Event_Type.txt" Format="WINDOWS" Encoding="ISO-8859-15" FieldSeparatorValue="&quot;\t&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" EscapeType="CSV" EscapeChar="&quot;'&quot;" TextEnclosure="&quot;'&quot;" CsvOption="true" FieldSeparatorType="Tabulation"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_y6nI8vd-EeWxCoLU1oH-QA" name="default" dataManager="_y6nI8fd-EeWxCoLU1oH-QA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_y6nI8_d-EeWxCoLU1oH-QA" id="_npFKUPd-EeWxCoLU1oH-QA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_y6nI9Pd-EeWxCoLU1oH-QA" label="Behavior_Event_Id" length="3" talendType="id_Integer" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_y6nI9fd-EeWxCoLU1oH-QA" label="Behavior_Event_Desc" length="44" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_y6nI9vd-EeWxCoLU1oH-QA" label="Behavior_Event_Code" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

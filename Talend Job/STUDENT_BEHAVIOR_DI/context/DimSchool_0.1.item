@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" confirmationNeeded="false" name="Default">
+  <contextParameter comment="" name="DimSchool_XmlFilePath" prompt="DimSchool_XmlFilePath?" promptNeeded="false" type="id_File" value="C:/Users/vinee_000/OneDrive/Vineet/Courses/Data Warehouse &amp; Business Intelligence/Project/DI Project/Materials/Data Sources/Schools.xml"/>
+  <contextParameter comment="" name="DimSchool_Encoding" prompt="DimSchool_Encoding?" promptNeeded="false" type="id_String" value="UTF-8"/>
+  <contextParameter comment="" name="DimSchool_XPathQuery" prompt="DimSchool_XPathQuery?" promptNeeded="false" type="id_String" value=""/>
+</talendfile:ContextType>
