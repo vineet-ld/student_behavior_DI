@@ -215,11 +215,14 @@
       <column comment="" key="false" length="1" name="ExpulsionServiceFlag" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
-    <metadata connector="FLOW" label="rejectstudentbehaviorresolution" name="student_behavior_dw_rejects">
+    <metadata connector="FLOW" label="rejectbehaviorresolution" name="student_behavior_dw_rejects">
       <column comment="" key="false" length="10" name="BehaviorResolutionAlternateKey" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -238,6 +241,9 @@
       <column comment="" key="false" length="1" name="ExpulsionServiceFlag" nullable="true" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -252,6 +258,7 @@
         <mapperTableEntries name="ResolutionEndDateFK" expression="BehaviorResolution.End_Date==null?&quot;-1&quot;:TalendDate.formatDate(&quot;yyyyMMdd&quot;,BehaviorResolution.End_Date) " type="id_String"/>
         <mapperTableEntries name="BehaviorResolutionTypeFK" expression="DimBehaviorResolutionType.BehaviorResolutionTypeKey " type="id_Integer"/>
         <mapperTableEntries name="ExpulsionServiceFlag" expression="BehaviorResolution.Expulsion_Service_Flag " type="id_Boolean"/>
+        <mapperTableEntries name="SORId" expression="30" type="id_Integer"/>
         <mapperTableEntries name="ETLProcessId" expression="context.getProperty(&quot;vJobPID&quot;)" type="id_String"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="student_behavior_dw_rejects" rejectInnerJoin="true">
@@ -261,6 +268,7 @@
         <mapperTableEntries name="ResolutionEndDateK" expression="BehaviorResolution.End_Date==null?&quot;-1&quot;:TalendDate.formatDate(&quot;yyyyMMdd&quot;,BehaviorResolution.End_Date) " type="id_String" nullable="true"/>
         <mapperTableEntries name="BehaviourResolutionTypeFK" expression="DimBehaviorResolutionType.BehaviorResolutionTypeKey " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="ExpulsionServiceFlag" expression="BehaviorResolution.Expulsion_Service_Flag " type="id_Boolean" nullable="true"/>
+        <mapperTableEntries name="SORId" expression="30" type="id_Integer"/>
         <mapperTableEntries name="ETLProcessId" expression="context.getProperty(&quot;vJobPID&quot;)" type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="BehaviorResolution" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -280,132 +288,6 @@
         <mapperTableEntries name="BehaviorResolutionCode" expression="BehaviorResolution.Behavior_Resolution_Code " type="id_String" operator="="/>
       </inputTables>
     </nodeData>
-  </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="128">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_dhGgMPV6EeWxe4SKmH-6fA" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
-    <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;student_behavior_dw&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="r0M4Avw8nA8="/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;factbehaviorresolution&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;"/>
-    <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
-    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
-    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
-    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
-    <elementParameter field="TABLE" name="ADD_COLS"/>
-    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="BehaviorResolutionAlternateKey"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="StudentBehaviorFK"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ResolutionStartDateFK"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ResolutionEndDateFK"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="BehaviorResolutionTypeFK"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ExpulsionServiceFlag"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ETLProcessId"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
-    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
-    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
-    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata comment="" connector="FLOW" label="factbehaviorresolution" name="factbehaviorresolution" type="TABLE">
-      <column comment="" key="false" length="10" name="BehaviorResolutionAlternateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="StudentBehaviorFK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="ResolutionStartDateFK" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="ResolutionEndDateFK" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="30" name="BehaviorResolutionTypeFK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="1" name="ExpulsionServiceFlag" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-    </metadata>
-    <metadata connector="REJECT" label="factbehaviorresolution" name="REJECT">
-      <column comment="" key="false" length="10" name="BehaviorResolutionAlternateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="StudentBehaviorFK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="ResolutionStartDateFK" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="ResolutionEndDateFK" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="30" name="BehaviorResolutionTypeFK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="1" name="ExpulsionServiceFlag" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-    </metadata>
   </node>
   <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlInput_1" show="false"/>
@@ -497,7 +379,144 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="224">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_dhGgMPV6EeWxe4SKmH-6fA" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;student_behavior_dw&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="r0M4Avw8nA8="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;factbehaviorresolution&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="BehaviorResolutionAlternateKey"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="StudentBehaviorFK"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ResolutionStartDateFK"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ResolutionEndDateFK"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="BehaviorResolutionTypeFK"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ExpulsionServiceFlag"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SORId"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ETLProcessId"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="factbehaviorresolution" name="tMysqlOutput_1">
+      <column comment="" key="false" length="10" name="BehaviorResolutionAlternateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="StudentBehaviorFK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="ResolutionStartDateFK" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="ResolutionEndDateFK" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="30" name="BehaviorResolutionTypeFK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="1" name="ExpulsionServiceFlag" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+    <metadata connector="REJECT" label="factbehaviorresolution" name="REJECT">
+      <column comment="" key="false" length="10" name="BehaviorResolutionAlternateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="StudentBehaviorFK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="ResolutionStartDateFK" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="ResolutionEndDateFK" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="30" name="BehaviorResolutionTypeFK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="1" name="ExpulsionServiceFlag" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_2" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_dhGgMPV6EeWxe4SKmH-6fA" show="false"/>
@@ -560,6 +579,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SORId"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ETLProcessId"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -574,7 +598,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="rejectstudentbehaviorresolution" name="tMysqlOutput_2">
+    <metadata connector="FLOW" label="rejectbehaviorresolution" name="tMysqlOutput_2">
       <column comment="" key="false" length="10" name="BehaviorResolutionAlternateKey" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -591,13 +615,16 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="1" name="ExpulsionServiceFlag" nullable="true" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
-    <metadata connector="REJECT" label="rejectstudentbehaviorresolution" name="REJECT">
+    <metadata connector="REJECT" label="rejectbehaviorresolution" name="REJECT">
       <column comment="" key="false" length="10" name="BehaviorResolutionAlternateKey" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -614,6 +641,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="1" name="ExpulsionServiceFlag" nullable="true" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">

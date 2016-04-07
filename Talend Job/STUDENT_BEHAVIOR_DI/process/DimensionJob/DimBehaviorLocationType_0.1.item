@@ -195,6 +195,9 @@
       <column comment="" key="false" length="3" name="BehaviorLocationCode" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -206,6 +209,7 @@
         <mapperTableEntries name="BehaviorLocationTypeAlternateKey" expression="DimBehaviorLocationType.Behavior_Location_Id " type="id_Integer"/>
         <mapperTableEntries name="BehaviorLocationDescription" expression="DimBehaviorLocationType.Behavior_Location_Desc " type="id_String"/>
         <mapperTableEntries name="BehaviorLocationCode" expression="DimBehaviorLocationType.Behavior_Location_Code " type="id_String"/>
+        <mapperTableEntries name="SORId" expression="3" type="id_Integer"/>
         <mapperTableEntries name="ETLProcessId" expression="context.getProperty(&quot;vJobPID&quot;)" type="id_String"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="DimBehaviorLocationType" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -263,6 +267,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SORId"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ETLProcessId"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -287,6 +296,9 @@
       <column comment="" key="false" length="3" name="BehaviorLocationCode" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -299,6 +311,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="3" name="BehaviorLocationCode" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">

@@ -200,13 +200,16 @@
       <column comment="" key="false" length="6" name="AbsenceReasonCode" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="30" name="AbsenceReasonDesc" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="40" name="AbsenceReasonDesc" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="AbsenceReasonAbbv" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="AbsenceReasonType" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -222,6 +225,7 @@
         <mapperTableEntries name="AbsenceReasonDesc" expression="DimAbsenceReason.Reason_Desc " type="id_String"/>
         <mapperTableEntries name="AbsenceReasonAbbv" expression="DimAbsenceReason.Reason_Abbv " type="id_String"/>
         <mapperTableEntries name="AbsenceReasonType" expression="DimAbsenceReason.Reason_Type " type="id_String"/>
+        <mapperTableEntries name="SORId" expression="1" type="id_Integer"/>
         <mapperTableEntries name="ETLProcessId" expression="context.getProperty(&quot;vJobPID&quot;)" type="id_String"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="DimAbsenceReason" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -233,7 +237,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="992" posY="224">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_dhGgMPV6EeWxe4SKmH-6fA" show="false"/>
@@ -291,6 +295,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SORId"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ETLProcessId"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -312,13 +321,16 @@
       <column comment="" key="false" length="6" name="AbsenceReasonCode" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="30" name="AbsenceReasonDesc" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="40" name="AbsenceReasonDesc" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="AbsenceReasonAbbv" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="AbsenceReasonType" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -332,13 +344,16 @@
       <column comment="" key="false" length="6" name="AbsenceReasonCode" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="30" name="AbsenceReasonDesc" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="40" name="AbsenceReasonDesc" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="AbsenceReasonAbbv" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="AbsenceReasonType" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
