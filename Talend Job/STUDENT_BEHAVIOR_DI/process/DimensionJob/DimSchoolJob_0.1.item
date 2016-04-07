@@ -472,12 +472,15 @@
       <column comment="" key="false" length="50" name="ImageUrl" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
     <nodeData xsi:type="MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="student_behavior_dw">
         <mapperTableEntries name="SchoolAlternateKey" expression="DimSchool.School_Id " type="id_Integer"/>
@@ -520,6 +523,7 @@
         <mapperTableEntries name="CDEMinimumGradeTaught" expression="DimSchool.CDE_Minimum_Grade_Taught " type="id_Integer"/>
         <mapperTableEntries name="CDEMaximumGradeTaught" expression="DimSchool.CDE_Maximum_Grade_Taught " type="id_Integer"/>
         <mapperTableEntries name="ImageUrl" expression="DimSchool.ImageURL" type="id_String"/>
+        <mapperTableEntries name="SORId" expression="8" type="id_Integer"/>
         <mapperTableEntries name="ETLProcessId" expression="context.getProperty(&quot;vJobPID&quot;)" type="id_String"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="DimSchool" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -799,6 +803,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SORId"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ETLProcessId"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -934,6 +943,9 @@
       <column comment="" key="false" length="50" name="ImageUrl" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1057,6 +1069,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="50" name="ImageUrl" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">

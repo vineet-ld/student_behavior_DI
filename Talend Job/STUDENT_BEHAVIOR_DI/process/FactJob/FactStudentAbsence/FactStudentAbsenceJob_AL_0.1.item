@@ -279,6 +279,9 @@
       <column comment="" key="false" length="1" name="CurrentFlag" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -317,6 +320,9 @@
       <column comment="" key="false" length="1" name="CurrentFlag" nullable="true" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -324,7 +330,7 @@
     <nodeData xsi:type="MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
-      <outputTables sizeState="INTERMEDIATE" name="student_behavior_dw" minimized="true">
+      <outputTables sizeState="INTERMEDIATE" name="student_behavior_dw">
         <mapperTableEntries name="StudentAbsenceAlternateKey" expression="StudentAbsence.Absence_id " type="id_Integer"/>
         <mapperTableEntries name="AbsenceDateFK" expression="TalendDate.formatDate(&quot;yyyyMMdd&quot;,TalendDate.parseDate(&quot;MM/dd/yyyy&quot;,StudentAbsence.Absence_Date)) " type="id_String"/>
         <mapperTableEntries name="SchoolFK" expression="DimSchool.SchoolKey " type="id_Integer"/>
@@ -336,6 +342,7 @@
         <mapperTableEntries name="AbsenceMinutes" expression="StudentAbsence.AbsenceMinutes" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="Tardy" expression="StudentAbsence.Tardy" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="CurrentFlag" expression="StudentAbsence.Current_Flag==&quot;TRUE&quot;?true:false " type="id_Boolean"/>
+        <mapperTableEntries name="SORId" expression="17" type="id_Integer"/>
         <mapperTableEntries name="ETLProcessId" expression="context.getProperty(&quot;vJobPID&quot;)" type="id_String"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="student_behavior_dw_rejects" rejectInnerJoin="true">
@@ -350,6 +357,7 @@
         <mapperTableEntries name="AbsenceMinutes" expression="StudentAbsence.AbsenceMinutes" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="Tardy" expression="StudentAbsence.Tardy" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="CurrentFlag" expression="StudentAbsence.Current_Flag==&quot;TRUE&quot;?true:false " type="id_Boolean" nullable="true"/>
+        <mapperTableEntries name="SORId" expression="17" type="id_Integer"/>
         <mapperTableEntries name="ETLProcessId" expression="context.getProperty(&quot;vJobPID&quot;)" type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="StudentAbsence" minimized="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -563,7 +571,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="96">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_dhGgMPV6EeWxe4SKmH-6fA" show="false"/>
@@ -651,6 +659,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SORId"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ETLProcessId"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -665,7 +678,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata comment="" connector="FLOW" label="factstudentabsence" name="factstudentabsence" type="TABLE">
+    <metadata connector="FLOW" label="factstudentabsence" name="tMysqlOutput_1">
       <column comment="" key="false" length="10" name="StudentAbsenceAlternateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -697,6 +710,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="1" name="CurrentFlag" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -737,6 +753,9 @@
       <column comment="" key="false" length="1" name="CurrentFlag" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -744,7 +763,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="256">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_2" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_dhGgMPV6EeWxe4SKmH-6fA" show="false"/>
@@ -832,6 +851,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SORId"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ETLProcessId"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -880,6 +904,9 @@
       <column comment="" key="false" length="1" name="CurrentFlag" nullable="true" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -916,6 +943,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="1" name="CurrentFlag" nullable="true" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="SORId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="ETLProcessId" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">

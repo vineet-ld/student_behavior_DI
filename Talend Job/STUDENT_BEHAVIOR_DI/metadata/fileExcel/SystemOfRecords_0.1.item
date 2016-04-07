@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:FileExcelConnection xmi:id="_ApWtgPw4EeW-4fzA4TsGJg" name="SystemOfRecords" dataPackage="_ApWtgfw4EeW-4fzA4TsGJg" Server="Localhost 127.0.0.1" FilePath="C:/Users/vinee_000/OneDrive/Vineet/Courses/Data Warehouse &amp; Business Intelligence/Project/DI Project/Materials/Data Sources/SystemOfRecords.xlsx" Encoding="ISO-8859-15" UseHeader="true" HeaderValue="1" FirstLineCaption="true" SheetName="Sheet1" firstColumn="1" lastColumn="2" thousandSeparator="','" decimalSeparator="'.'" selectAllSheets="true" sheetList="Sheet1:w&#xA;">
+    <sheetColumns>A</sheetColumns>
+    <sheetColumns>B</sheetColumns>
+    <sheetColumns>C</sheetColumns>
+    <sheetColumns>D</sheetColumns>
+    <sheetColumns>E</sheetColumns>
+    <sheetColumns>F</sheetColumns>
+    <sheetColumns>G</sheetColumns>
+    <sheetColumns>H</sheetColumns>
+    <sheetColumns>I</sheetColumns>
+    <sheetColumns>J</sheetColumns>
+  </TalendMetadata:FileExcelConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_ApWtgfw4EeW-4fzA4TsGJg" name="default" dataManager="_ApWtgPw4EeW-4fzA4TsGJg">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ApWtgvw4EeW-4fzA4TsGJg" id="_xdlt8Pw3EeW-4fzA4TsGJg" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ApWtg_w4EeW-4fzA4TsGJg" label="DATA_SOURCE" length="34" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ApWthPw4EeW-4fzA4TsGJg" label="DATABASE" length="13" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
